@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+    <div class="section-center page-info">
+
+      <div class="container">
+        <br>
+        <form  action="#" method="POST" enctype="multipart/form-data">
+          <label for="upload">Upload Image</label>
+          <input type="file" id="upload" name="image" required="True" class="btn btn-outline-primary">
+          <input type="file" id="upload" name="image2" required="True" class="btn btn-outline-primary">
+          <input type="submit"value="Predict" class="btn btn-outline-primary">
+        </form>
+      </div>
+
+      {% if fileupload %}
+
+
+      <div class="container">
+          <div class="row">
+              <div class="col-md-6" id="predict">
+                  <!-- <img src="{{ url_for('static',filename='upload/')}}{{ img_name }}" > -->
+              </div>
+              <div class="col-md-6" id="predict">
+                  <img src="{{ url_for('static',filename='predict/')}}{{img_name}}" >
+              </div>
+          </div>
+      </div>
+    </div>
+      {% endif %}
+  </section>
+
+
+
+
+  </body>
+</html>
