@@ -1,23 +1,19 @@
 from __future__ import print_function
-
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
 import torch.optim as optim
-
 from PIL import Image
 import matplotlib.pyplot as plt
-
 import torchvision.transforms as transforms
-
-
 import copy
 import cv2
+
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-
-# desired size of the output image
-imsize = 64
-
+unloader = transforms.ToPILImage()  # reconvert into PIL image
+content_layers_default = ['conv_4']
+style_layers_default = ['conv_1', 'conv_2', 'conv_3', 'conv_4', 'conv_5']
+imsize = 512 if torch.cuda.is_available() else 128  # use small size if no gpu
 loader = transforms.Compose([
     transforms.Resize(imsize),  # scale imported image
     transforms.ToTensor()])  # transform it into a torch tensor
@@ -28,15 +24,6 @@ def image_loader(image_name):
     # fake batch dimension required to fit network's input dimensions
     image = loader(image).unsqueeze(0)
     return image.to(device, torch.float)
-
-
-# style_img = image_loader(".static/upload/{}".format(filename))
-# content_img = image_loader(".static/upload/{}".format(filename_2))
-#
-# assert style_img.size() == content_img.size(), \
-#     "we need to import style and content images of the same size"
-
-unloader = transforms.ToPILImage()  # reconvert into PIL image
 
 class ContentLoss(nn.Module):
 
@@ -51,8 +38,6 @@ class ContentLoss(nn.Module):
     def forward(self, input):
         self.loss = F.mse_loss(input, self.target)
         return input
-
-
 def gram_matrix(input):
     a, b, c, d = input.size()  # a=batch size(=1)
     # b=number of feature maps
@@ -92,10 +77,6 @@ class Normalization(nn.Module):
     def forward(self, img):
         # normalize img
         return (img - self.mean) / self.std
-
-# desired depth layers to compute style/content losses :
-content_layers_default = ['conv_4']
-style_layers_default = ['conv_1', 'conv_2', 'conv_3', 'conv_4', 'conv_5']
 
 def get_style_model_and_losses(cnn, normalization_mean, normalization_std,
                                style_img, content_img,
