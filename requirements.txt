@@ -48,7 +48,7 @@ Markdown==3.3.3
 MarkupSafe==1.1.1
 matplotlib==3.3.2
 mistune==0.8.4
-mkl-fft==1.2.0
+mkl-fft==1.0.2
 mkl-random==1.0.4
 mkl-service==2.3.0
 multidict==4.7.6
