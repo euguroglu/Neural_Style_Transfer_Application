@@ -94,12 +94,11 @@ terminado==0.9.1
 testpath==0.4.4
 tf-estimator-nightly==2.4.0.dev2020102301
 threadpoolctl==2.1.0
-torch==1.7.0
+torch==1.7.0+cpu
 torchaudio==0.7.0
 torchvision==0.8.1
 tornado==6.0.4
 tqdm==4.51.0
-traitlets==5.0.5
 typing-extensions==3.7.4.3
 urllib3==1.25.11
 wandb==0.10.11
