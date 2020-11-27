@@ -48,7 +48,6 @@ Markdown==3.3.3
 MarkupSafe==1.1.1
 matplotlib==3.3.2
 mistune==0.8.4
-mkl-fft==1.0.2
 multidict==4.7.6
 numpy==1.18.5
 oauthlib==3.1.0
