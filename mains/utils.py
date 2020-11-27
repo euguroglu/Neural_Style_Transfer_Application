@@ -7,7 +7,7 @@ from PIL import Image
 import matplotlib.pyplot as plt
 import torchvision.transforms as transforms
 import copy
-import cv2
+
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 unloader = transforms.ToPILImage()  # reconvert into PIL image
