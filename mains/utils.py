@@ -4,17 +4,16 @@ import torch.nn as nn
 import torch.nn.functional as F
 import torch.optim as optim
 from PIL import Image
-import matplotlib.pyplot as plt
 import torchvision.transforms as transforms
 import copy
 
 
-# device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-device = torch.device("cpu")
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+# device = torch.device("cpu")
 unloader = transforms.ToPILImage()  # reconvert into PIL image
 content_layers_default = ['conv_4']
 style_layers_default = ['conv_1', 'conv_2', 'conv_3', 'conv_4', 'conv_5']
-imsize = 8 if torch.cuda.is_available() else 8  # use small size if no gpu
+imsize = 256 if torch.cuda.is_available() else 256  # use small size if no gpu
 loader = transforms.Compose([
     transforms.Resize(imsize),  # scale imported image
     transforms.ToTensor()])  # transform it into a torch tensor

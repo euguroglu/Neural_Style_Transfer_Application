@@ -120,8 +120,17 @@
 
 
           <input type="submit"value="Draw" class="btn btn-outline-primary">
+          <br>
+          <br>
+          <div align="center">
+
+
+          <h4>Drawing process will take around 10min please wait!</h3>
+            </div>
           </div>
         </form>
+
+
       </div>
 
       {% if fileupload %}
@@ -133,7 +142,7 @@
                   <!-- <img src="{{ url_for('static',filename='upload/')}}{{ img_name }}" > -->
               </div>
               <div class="col-md-6" id="predict">
-                  <img src="{{ url_for('static',filename='predict/')}}{{img_name}}" >
+                  <img src="{{ url_for('static',filename='predict/')}}{{img_name}}"  >
               </div>
           </div>
       </div>
