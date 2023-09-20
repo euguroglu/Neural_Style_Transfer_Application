@@ -48,7 +48,7 @@ MarkupSafe==1.1.1
 matplotlib==3.3.2
 mistune==0.8.4
 multidict==4.7.6
-numpy==1.18.5
+numpy==1.19.5
 oauthlib==3.1.0
 olefile==0.46
 packaging==20.4
