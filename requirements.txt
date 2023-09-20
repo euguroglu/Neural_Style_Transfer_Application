@@ -16,7 +16,7 @@ colorama==0.4.4
 configparser==5.0.1
 cryptography==3.2.1
 cycler==0.10.0
-Cython==0.29.21
+cython==0.29.24
 decorator==4.4.2
 defusedxml==0.6.0
 docker-pycreds==0.4.0
@@ -48,7 +48,7 @@ MarkupSafe==1.1.1
 matplotlib==3.3.2
 mistune==0.8.4
 multidict==4.7.6
-numpy==1.18.5
+numpy==1.19.5
 scikit-learn==0.23.1
 scipy==1.7.3
 # LAPACK and BLAS libraries
