@@ -52,7 +52,6 @@ numpy==1.19.5
 scikit-learn==0.23.1
 scipy==1.7.3
 # LAPACK and BLAS libraries
-libblas==3.8.0
 liblapack==3.8.0
 oauthlib==3.1.0
 olefile==0.46
